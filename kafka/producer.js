@@ -5,7 +5,9 @@ const kafka = new Kafka({
 
   brokers: [process.env.KAFKA_BROKER],
 
-  ssl: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 
   sasl: {
     mechanism: "plain",
